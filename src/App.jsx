@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Routess from "./routes";
+import axios from "axios";
 
-import './App.css'
+import "./App.css";
+
+import { api } from "./Api";
 
 export default function App() {
-  return <Routess/>;
+  useEffect(()=>{
+    api.get("/note").then(res=>{
+      console.log(res.data)
+    })
+  }, []);
+  return <Routess />;
 }

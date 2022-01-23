@@ -5,7 +5,8 @@ export const Board = styled.div`
   height: 70vh;
   margin: auto;
   margin-top: 25vh;
-  min-width: 500px;
+  min-width: 300px;
+  max-width: 450px;
   
 
   input {

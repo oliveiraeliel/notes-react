@@ -24,14 +24,14 @@ export default function SignUp() {
             <AiOutlineUser />
             Username
           </label>
-          <input></input>
+          <input maxLength={20}></input>
         </Field>
         <Field>
           <label>
             <RiLockPasswordLine />
             Password
           </label>
-          <input type="password"></input>
+          <input type="password" maxLength={20}></input>
         </Field>
       </div>
       <Bottom>
