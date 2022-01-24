@@ -7,10 +7,10 @@ import "./App.css";
 import { api } from "./Api";
 
 export default function App() {
-  useEffect(()=>{
-    api.get("/note").then(res=>{
-      console.log(res.data)
-    })
-  }, []);
+  // useEffect(()=>{
+  //   api.get("/note").then(res=>{
+  //     console.log(res.data)
+  //   })
+  // }, []);
   return <Routess />;
 }

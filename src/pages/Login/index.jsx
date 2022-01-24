@@ -8,6 +8,7 @@ import { Board, Field, Fields, Bottom } from "./styles";
 import Button from "../../components/Button";
 
 export default function Login() {
+  localStorage.clear();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -16,6 +17,7 @@ export default function Login() {
       .post("/user/login", { username: username, password: password })
       .then((res) => {
         if (res.status === 200) {
+          localStorage.setItem("username", username);
           window.location.href = "home";
           return;
         }

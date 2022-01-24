@@ -23,4 +23,5 @@ export const Note = styled.textarea`
   border: 1px solid black;
   border-radius: 4px;
   padding: 15px;
+  font-weight: inherit;
 `;

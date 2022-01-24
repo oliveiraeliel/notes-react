@@ -10,5 +10,3 @@ export const NewNote = styled.a`
     text-decoration: none;
     color: black;
 `;
-
-export const Notes = styled.div``;

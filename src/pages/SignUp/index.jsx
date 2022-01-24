@@ -1,19 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
 
 import Button from "../../components/Button";
 
 import { Board, Field, Bottom } from "../Login/styles";
+import { api } from "../../Api";
 
 export default function SignUp() {
-    function handleClickLogin(){
-        window.location.href = "/login"
-    }
-    function handleClickSignUp(){
-        window.location.href = "/home"
-    }
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
+  function handleClickSignUp() {
+    localStorage.clear();
+
+    api
+      .post("/user/sign-up", { username: username, password: password })
+      .then((res) => {
+        if (res.status === 201) {
+          localStorage.setItem("username", username);
+          window.location.href = "/home";
+          return;
+        }
+        console.log(res);
+      })
+      .catch((err) => {
+        alert("Dados incorretos");
+        console.log(err);
+      });
+  }
+  function handleClickLogin() {
+    window.location.href = "/login";
+  }
 
   return (
     <Board>
@@ -24,14 +42,23 @@ export default function SignUp() {
             <AiOutlineUser />
             Username
           </label>
-          <input maxLength={20}></input>
+          <input
+            maxLength={20}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          ></input>
         </Field>
         <Field>
           <label>
             <RiLockPasswordLine />
             Password
           </label>
-          <input type="password" maxLength={20}></input>
+          <input
+            type="password"
+            maxLength={20}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          ></input>
         </Field>
       </div>
       <Bottom>
