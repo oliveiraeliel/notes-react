@@ -13,7 +13,7 @@ export default function NewNote() {
   const username = localStorage.getItem("username");
 
   useEffect(()=>{
-    if(!username) window.location.href = "/login"
+    if(!username) window.location.href = "/notes-react/#/login"
   }, [])
 
   function handleClickCreate() {

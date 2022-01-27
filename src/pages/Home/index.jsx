@@ -10,12 +10,12 @@ export default function Home() {
   const [datas, setDatas] = useState([]);
 
   function handleClickLogout() {
-    window.location.href = "/login";
+    window.location.href = "/notes-react/#/login";
   }
 
   useEffect(() => {
     if (username === null) {
-      window.location.href = "/login";
+      window.location.href = "/notes-react/#/login";
       return;
     }
     api

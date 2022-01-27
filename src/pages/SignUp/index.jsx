@@ -19,7 +19,7 @@ export default function SignUp() {
       .then((res) => {
         if (res.status === 201) {
           localStorage.setItem("username", username);
-          window.location.href = "/home";
+          window.location.href = "/notes-react/#/home";
           return;
         }
         console.log(res);
@@ -30,7 +30,7 @@ export default function SignUp() {
       });
   }
   function handleClickLogin() {
-    window.location.href = "/login";
+    window.location.href = "/notes-react/#/login";
   }
 
   return (
