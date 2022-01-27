@@ -18,10 +18,14 @@ export const Note = styled.textarea`
   width: 70%;
   height: 50%;
   resize: none;
-  margin-top: 10vh;
   font-size: 16pt;
   border: 1px solid black;
   border-radius: 4px;
   padding: 15px;
   font-weight: inherit;
+`;
+
+export const NoteTitle = styled(Note)`
+  height: 10%;
+  margin-top: 10vh;
 `;

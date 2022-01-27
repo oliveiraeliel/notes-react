@@ -4,7 +4,7 @@ import { Note } from "../../pages/NewNote/styles";
 
 export const Board = styled.div`
   width: 60vw;
-  margin-top: 10vh;
+  margin-top: 7vh;
 
   label {
     float: left;
