@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
@@ -9,13 +9,13 @@ import NewNote from "./pages/NewNote";
 export default function Routess() {
   return (
     // <BrowserRouter>
-      <Switch>
+      <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/home" element={<Home />} />
         <Route path="/new-note" element={<NewNote />} />
-      </Switch>
+      </Routes>
     // </BrowserRouter>
   );
 }
