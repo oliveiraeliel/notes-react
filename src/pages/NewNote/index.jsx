@@ -20,7 +20,7 @@ export default function NewNote() {
         .post(`/note/`, { title: title, text: text, username: username })
         .then((res) => {
           if (res.status === 201) {
-            window.location.href = "home";
+            window.location.href = "/notes-react/#/home";
             return;
           }
         })
