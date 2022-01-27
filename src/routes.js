@@ -10,11 +10,11 @@ export default function Routess() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/notes-react" element={<Login />} />
-        <Route path="/notes-react/login" element={<Login />} />
-        <Route path="/notes-react/sign-up" element={<SignUp />} />
-        <Route path="/notes-react/home" element={<Home />} />
-        <Route path="/notes-react/new-note" element={<NewNote />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/new-note" element={<NewNote />} />
       </Routes>
     </BrowserRouter>
   );
