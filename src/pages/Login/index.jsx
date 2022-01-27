@@ -13,7 +13,7 @@ export default function Login() {
 
   function handleClickLogin() {
     api
-      .post("/user/login", { username: username, password: password })
+      .post("/user/login", { username: username, passwordNotEncrypted: password })
       .then((res) => {
         if (res.status === 200) {
           localStorage.setItem("username", username);

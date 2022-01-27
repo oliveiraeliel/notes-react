@@ -15,7 +15,7 @@ export default function SignUp() {
     localStorage.clear();
 
     api
-      .post("/user/sign-up", { username: username, password: password })
+      .post("/user/sign-up", { username: username, passwordNotEncrypted: password })
       .then((res) => {
         if (res.status === 201) {
           localStorage.setItem("username", username);
