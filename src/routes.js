@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
@@ -8,7 +8,7 @@ import NewNote from "./pages/NewNote";
 
 export default function Routess() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/notes-react" element={<Login />} />
         <Route path="/notes-react/login" element={<Login />} />
@@ -16,6 +16,6 @@ export default function Routess() {
         <Route path="/notes-react/home" element={<Home />} />
         <Route path="/notes-react/new-note" element={<NewNote />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
