@@ -1,5 +1,9 @@
 {
   "homepage": "https://oliveiraeliel.github.io/notes-react/",
+  "login": "https://oliveiraeliel.github.io/notes-react/login",
+  "home": "https://oliveiraeliel.github.io/notes-react/home",
+  "sign-up": "https://oliveiraeliel.github.io/notes-react/sign-up",
+  "new-note": "https://oliveiraeliel.github.io/notes-react/new-note",
   "name": "notes",
   "version": "0.1.0",
   "private": true,
