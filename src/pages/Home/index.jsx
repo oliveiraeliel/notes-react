@@ -34,7 +34,7 @@ export default function Home() {
         <GrLogout onClick={handleClickLogout} />
         Notes
       </h1>
-      <NewNote href="/new-note">
+      <NewNote href="/notes-react/#/new-note">
         <a>
           <AiOutlinePlus />
         </a>
