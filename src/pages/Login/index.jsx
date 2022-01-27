@@ -64,7 +64,7 @@ export default function Login() {
           text="Login"
           buttonColor="#5F10B1"
           transparent={false}
-          btnWidth="65%"
+          btnWidth="55%"
           btnHeight="40"
           btnMargin_left="0"
           btnMargin_right="0"
@@ -78,7 +78,7 @@ export default function Login() {
           text="Sign up"
           buttonColor="#5F10B1"
           transparent={true}
-          btnWidth="25%"
+          btnWidth="35%"
           btnHeight="40"
           btnMargin_left="5"
           btnMargin_right="0"
