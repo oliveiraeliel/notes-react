@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
-import { Board, NewNote, Notes } from "./styles";
+import { GrLogout } from "react-icons/gr";
+import { Board, NewNote } from "./styles";
 import { api } from "../../Api";
 import Note from "../../components/Note";
 
@@ -8,10 +9,12 @@ export default function Home() {
   const username = localStorage.getItem("username");
   const [datas, setDatas] = useState([]);
 
+  function handleClickLogout() {
+    window.location.href = "/login";
+  }
 
   useEffect(() => {
     if (username === null) {
-      console.log(username);
       window.location.href = "/login";
       return;
     }
@@ -24,11 +27,13 @@ export default function Home() {
         console.log(err);
       });
   }, []);
-  console.log(datas);
 
   return (
     <Board>
-      <h1>Notes</h1>
+      <h1>
+        <GrLogout onClick={handleClickLogout} />
+        Notes
+      </h1>
       <NewNote href="/new-note">
         <a>
           <AiOutlinePlus />
@@ -59,6 +64,11 @@ export default function Home() {
               months[data.getMonth()]
             }/${data.getFullYear()}`}
             time={`${data.getHours()}:${data.getMinutes()}`}
+            txtWidth="70%"
+            readonly={true}
+            mTop="20px"
+            border={true}
+            maxRows={10}
           />
         );
       })}

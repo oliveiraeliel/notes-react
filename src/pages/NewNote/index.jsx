@@ -2,13 +2,19 @@ import React, { useState } from "react";
 import { BiPencil } from "react-icons/bi";
 import Button from "../../components/Button";
 
-import { Board, Note, NoteTitle } from "./styles";
+import { Board } from "./styles";
 import { api } from "../../Api";
+import Note from "../../components/Note";
+import { useEffect } from "react/cjs/react.development";
 
 export default function NewNote() {
   const [title, setTitle] = useState(null);
   const [text, setText] = useState(null);
   const username = localStorage.getItem("username");
+
+  useEffect(()=>{
+    if(!username) window.location.href = "/login"
+  }, [])
 
   function handleClickCreate() {
     if (title !== null || text !== null) {
@@ -23,7 +29,6 @@ export default function NewNote() {
         .catch((err) => {
           console.log(err);
         });
-
       return;
     }
     alert("Fill all fields");
@@ -35,14 +40,25 @@ export default function NewNote() {
         <BiPencil />
         Create New Note
       </h1>
-      <NoteTitle
-        placeholder="Set a title here..."
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      ></NoteTitle>
+
       <Note
-        placeholder="Write your text here..."
+        placeholder="Write your title here..."
+        txtWidth="70%"
+        value={title}
+        maxRows={4}
+        mTop="10vh"
+        maxLength="40"
+        readonly={false}
+        onChange={(e) => setTitle(e.target.value)}
+      ></Note>
+      <Note
+        placeholder="Write your note here..."
+        txtWidth="70%"
         value={text}
+        maxRows={10}
+        // mTop="100px"
+        maxLength="1000"
+        readonly={false}
         onChange={(e) => setText(e.target.value)}
       ></Note>
       <p>
@@ -64,4 +80,3 @@ export default function NewNote() {
     </Board>
   );
 }
-

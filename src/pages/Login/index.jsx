@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
-import axios from "axios";
 import { api } from "../../Api";
-import { Board, Field, Fields, Bottom } from "./styles";
+import { Board, Field, Bottom } from "./styles";
 
 import Button from "../../components/Button";
 
