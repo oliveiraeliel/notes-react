@@ -56,6 +56,8 @@ export default function Home() {
           "11",
           "12",
         ];
+        let min = data.getMinutes();
+        if (min.toString().length === 1) min = `0${min}`;
         return (
           <Note
             title={row.title}
@@ -63,7 +65,7 @@ export default function Home() {
             date={`${data.getDate()}/${
               months[data.getMonth()]
             }/${data.getFullYear()}`}
-            time={`${data.getHours()}:${data.getMinutes()}`}
+            time={`${data.getHours()}:${min}`}
             txtWidth="70%"
             readonly={true}
             mTop="20px"
